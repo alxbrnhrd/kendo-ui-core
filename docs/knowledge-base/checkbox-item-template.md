@@ -78,12 +78,17 @@ The following example demonstrates how to achieve the desired scenario.
         </style>
         <script>
             $(document).ready(function() {
+            
+               // from 2022 releases the structure of the list and some ccs classes are different
+               // therefore this method must be modified accordingly
                 var checkInputs = function(elements) {
                   elements.each(function() {
-                        var element = $(this);     
-                    var input = element.children("input");
+                      var element = $(this);     
+                      // var input = element.children("input");
+                      var input = element.children("span").children("input"); // structure has been changed
 
-                    input.prop("checked", element.hasClass("k-state-selected"));
+                     // input.prop("checked", element.hasClass("k-state-selected"));
+                     input.prop("checked", element.hasClass("k-selected")); // class has been renamed
                   });
                 };
                 // create MultiSelect from select HTML element
