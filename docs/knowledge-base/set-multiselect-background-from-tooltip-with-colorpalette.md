@@ -64,8 +64,13 @@ Is it possible to assign a color to the MultiSelect tags from a ToolTip as we ca
           ]
         });
 
+        /**
+        * In 2022 releases the filter: "li" will not work anymore
+        * you can use filter: ".k-chip" instead
+        */
+        
         $("#container").kendoTooltip({
-          filter: "li",
+          filter: "li", // filter: ".k-chip" in new releases 2022
           content: "<div id='color-chooser'></div>",
           width:200,
           show:function(e){
