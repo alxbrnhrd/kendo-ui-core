@@ -81,9 +81,10 @@ The following example demonstrates how to achieve the desired scenario.
                 var checkInputs = function(elements) {
                   elements.each(function() {
                         var element = $(this);     
-                    var input = element.children("input");
 
-                    input.prop("checked", element.hasClass("k-selected"));
+                        /* var input = element.children("input"); */
+                        var input = element.find(":checkbox"); // in new releases of kendo-ui the input is nested deeper and cannot be found with element.children
+                        input.prop("checked", element.hasClass("k-selected"));
                   });
                 };
                 // create MultiSelect from select HTML element
